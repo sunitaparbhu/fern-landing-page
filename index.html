@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fern AI — EEOC Position Statements for In-House Counsel</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fern: #285638;
+    --fern-deep: #1a3d26;
+    --fern-light: #E6F0E4;
+    --fern-muted: #6DA67A;
+    --cream: #FAFAF5;
+    --warm-white: #F7F6F1;
+    --text: #1A1A1A;
+    --text-secondary: #5B5C5B;
+    --text-muted: #8A8A8A;
+    --border: #E0DED6;
+    --amber: #D97706;
+    --amber-bg: #FFFBEB;
+    --red-urgent: #B91C1C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ============================================
+     NAV
+     ============================================ */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(250, 250, 245, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo svg { height: 32px; width: auto; }
+
+  .nav-cta {
+    padding: 10px 24px;
+    background: var(--fern);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+
+  .nav-cta:hover { background: var(--fern-deep); transform: translateY(-1px); }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(40,86,56,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-content { max-width: 560px; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--amber-bg);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--amber);
+    margin-bottom: 32px;
+    animation: fadeInUp 0.6s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--amber);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero h1 {
+    font-family: 'Newsreader', serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    margin-bottom: 28px;
+    animation: fadeInUp 0.6s ease 0.1s both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--fern);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    animation: fadeInUp 0.6s ease 0.2s both;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: fadeInUp 0.6s ease 0.3s both;
+  }
+
+  .btn-primary {
+    padding: 16px 36px;
+    background: var(--fern);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover {
+    background: var(--fern-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(40, 86, 56, 0.2);
+  }
+
+  .btn-secondary {
+    padding: 16px 28px;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--fern);
+    color: var(--fern);
+  }
+
+  /* Hero right — the "deadline" visual */
+  .hero-visual {
+    position: relative;
+    animation: fadeInUp 0.8s ease 0.3s both;
+  }
+
+  .matter-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(0,0,0,0.02),
+      0 2px 4px rgba(0,0,0,0.02),
+      0 12px 40px rgba(0,0,0,0.06);
+  }
+
+  .matter-card-header {
+    background: var(--fern);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .matter-card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .matter-card-header svg { opacity: 0.6; }
+
+  .matter-card-header span {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+    opacity: 0.7;
+  }
+
+  .matter-card-header-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: rgba(185, 28, 28, 0.15);
+    border: 1px solid rgba(185, 28, 28, 0.3);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #FCA5A5;
+  }
+
+  .matter-card-header-badge-dot {
+    width: 5px;
+    height: 5px;
+    background: #FCA5A5;
+    border-radius: 50%;
+    animation: pulse 1.5s ease infinite;
+  }
+
+  .matter-card-body { padding: 28px 24px; }
+
+  .matter-title {
+    font-family: 'Newsreader', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .matter-charge {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+
+  .matter-rows { display: flex; flex-direction: column; }
+
+  .matter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .matter-row-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .matter-row-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .urgent-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    background: #FEF2F2;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red-urgent);
+  }
+
+  .urgent-pill-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--red-urgent);
+    border-radius: 50%;
+    animation: pulse 1.5s ease infinite;
+  }
+
+  .claims-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .claim-chip {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    border-left: 3px solid;
+  }
+
+  .claim-chip:nth-child(1) { background: #DBEAFE; border-color: #2563EB; color: #1E40AF; }
+  .claim-chip:nth-child(2) { background: #F5F3FF; border-color: #7C3AED; color: #6D28D9; }
+  .claim-chip:nth-child(3) { background: #FFF7ED; border-color: #F59E0B; color: #92400E; }
+  .claim-chip:nth-child(4) { background: #F0FDF4; border-color: #22C55E; color: #166534; }
+
+  .claim-chip:nth-child(4) { background: #F0FDF4; border-color: #22C55E; color: #166534; }
+
+  /* ============================================
+     SECTION — THE REALITY
+     ============================================ */
+  .section-problem {
+    padding: 120px 48px;
+    background: var(--fern-deep);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-problem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .section-problem .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--fern-muted);
+    margin-bottom: 24px;
+  }
+
+  .section-problem h2 {
+    font-family: 'Newsreader', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    max-width: 700px;
+    margin-bottom: 64px;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .problem-card {
+    background: rgba(255,255,255,0.05);
+    padding: 40px 36px;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+  }
+
+  .problem-card:hover { background: rgba(255,255,255,0.08); }
+
+  .problem-number {
+    font-family: 'Newsreader', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--fern-muted);
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .problem-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .problem-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ============================================
+     SECTION — ALTERNATIVES
+     ============================================ */
+  .section-gap {
+    padding: 120px 48px;
+    background: var(--cream);
+  }
+
+  .section-gap .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .section-gap h2 {
+    font-family: 'Newsreader', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    max-width: 640px;
+    margin-bottom: 20px;
+  }
+
+  .section-gap .section-sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 620px;
+    margin-bottom: 64px;
+  }
+
+  .alternatives-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .alt-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 36px;
+    position: relative;
+    transition: all 0.25s ease;
+  }
+
+  .alt-card::before {
+    content: '×';
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 28px;
+    color: #DC3545;
+    font-weight: 300;
+    opacity: 0.5;
+  }
+
+  .alt-card:hover { border-color: #DC3545; }
+
+  .alt-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--warm-white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .alt-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .alt-card .alt-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+
+  .alt-card .alt-fail {
+    font-size: 13px;
+    font-weight: 600;
+    color: #DC3545;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ============================================
+     SECTION — HOW FERN WORKS
+     ============================================ */
+  .section-chain {
+    padding: 120px 48px;
+    background: white;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chain-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .chain-header .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--fern);
+    margin-bottom: 24px;
+  }
+
+  .chain-header h2 {
+    font-family: 'Newsreader', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    max-width: 600px;
+    margin: 0 auto 20px;
+  }
+
+  .chain-header p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .chain-flow {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    position: relative;
+  }
+
+  .chain-step {
+    flex: 1;
+    text-align: center;
+    padding: 32px 20px;
+    position: relative;
+  }
+
+  .chain-step::after {
+    content: '→';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--fern-muted);
+    z-index: 1;
+  }
+
+  .chain-step:last-child::after { display: none; }
+
+  .chain-dot {
+    width: 48px;
+    height: 48px;
+    background: var(--fern-light);
+    border: 2px solid var(--fern);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--fern);
+  }
+
+  .chain-step h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--fern-deep);
+  }
+
+  .chain-step p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .chain-time {
+    margin-top: 48px;
+    text-align: center;
+    padding: 24px;
+    background: var(--fern-light);
+    border-radius: 12px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .chain-time-compare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .time-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .time-item .time-num {
+    font-family: 'Newsreader', serif;
+    font-size: 36px;
+    font-weight: 500;
+  }
+
+  .time-item .time-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .time-item.old .time-num {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--red-urgent);
+  }
+
+  .time-item.new .time-num { color: var(--fern); }
+
+  .time-arrow {
+    font-size: 24px;
+    color: var(--fern);
+  }
+
+  /* ============================================
+     SECTION — SOCIAL PROOF
+     ============================================ */
+  .section-proof {
+    padding: 120px 48px;
+    background: var(--cream);
+  }
+
+  .proof-header {
+    margin-bottom: 64px;
+  }
+
+  .proof-header .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .proof-header h2 {
+    font-family: 'Newsreader', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    max-width: 600px;
+  }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .proof-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px;
+    transition: all 0.25s ease;
+  }
+
+  .proof-card:hover {
+    border-color: var(--fern-muted);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .proof-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 12px);
+  }
+
+  .proof-quote {
+    font-family: 'Newsreader', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+
+  .proof-attr {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .proof-avatar {
+    width: 44px;
+    height: 44px;
+    background: var(--fern-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--fern);
+  }
+
+  .proof-name {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .proof-title {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .proof-result {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: var(--fern-light);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fern);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .proof-result::before {
+    content: '✓';
+    font-weight: 800;
+  }
+
+  /* ============================================
+     SECTION — ADVISORY BOARD
+     ============================================ */
+  .section-advisory {
+    padding: 120px 48px;
+    background: white;
+    border-top: 1px solid var(--border);
+  }
+
+  .advisory-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .advisory-inner .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--fern);
+    margin-bottom: 24px;
+  }
+
+  .advisory-inner h2 {
+    font-family: 'Newsreader', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .advisory-body {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0 auto 48px;
+  }
+
+  .advisory-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .advisory-logo-placeholder {
+    width: 80px;
+    height: 32px;
+    background: var(--warm-white);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .advisory-pullquote {
+    font-family: 'Newsreader', serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text);
+    max-width: 560px;
+    margin: 0 auto 12px;
+  }
+
+  .advisory-pullquote-attr {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* ============================================
+     SECTION — FINAL CTA
+     ============================================ */
+  .section-cta {
+    padding: 120px 48px;
+    background: var(--fern-deep);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(109, 166, 122, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .section-cta h2 {
+    font-family: 'Newsreader', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .section-cta p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  .btn-white {
+    padding: 18px 40px;
+    background: white;
+    color: var(--fern);
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+
+  .cta-note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  footer {
+    padding: 40px 48px;
+    background: var(--fern-deep);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-logo span {
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ============================================
+     ANIMATIONS
+     ============================================ */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero h1 { font-size: 40px; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .alternatives-grid { grid-template-columns: 1fr; }
+    .proof-grid { grid-template-columns: 1fr; }
+    .proof-card:last-child:nth-child(odd) { max-width: 100%; }
+    .chain-flow { flex-direction: column; }
+    .chain-step::after { display: none; }
+    .advisory-logos { flex-wrap: wrap; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 0 20px; }
+    .hero { padding: 100px 20px 60px; }
+    .hero h1 { font-size: 32px; }
+    section { padding: 80px 20px !important; }
+    .section-problem h2,
+    .section-gap h2,
+    .chain-header h2,
+    .proof-header h2,
+    .advisory-inner h2 { font-size: 32px; }
+    .section-cta h2 { font-size: 36px; }
+    .hero-cta-group { flex-direction: column; align-items: flex-start; }
+    .chain-time-compare { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg width="97" height="37" viewBox="0 0 97 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2433_2478)">
+<rect x="1" y="1" width="35" height="35" rx="17.5" fill="#285638"/>
+<path d="M79.6127 11.0105C78.4187 10.24 76.9422 11.3087 76.2789 10.4023C77.1954 9.28769 80.323 9.46252 80.3259 9.0357C79.6274 9.23446 79.2079 9.22837 78.82 9.09493L79.1841 8.3746C79.975 7.66572 81.9419 7.42082 81.3464 6.43691C80.7238 6.88055 79.4787 7.34398 79.091 8.11913L78.1109 8.73845C78.0526 8.70405 77.9928 8.66837 77.93 8.63102C79.9388 4.76556 76.994 9.96602 75.7548 9.88574C76.0331 8.98251 77.1157 7.80786 76.8779 7.07894C75.4874 8.09033 74.825 11.2277 72.9531 10.8318C73.3928 9.39791 74.9816 8.65786 74.9036 7.39881C73.054 8.59007 72.0269 12.1846 69.844 12.4019C70.768 10.3037 71.4242 10.3509 72.4132 8.23975C69.8621 8.05785 69.1991 13.3928 66.6245 13.1423C67.4027 11.1824 69.2073 9.53524 69.6035 8.14812C66.8533 8.73762 65.9303 14.6654 62.7825 14.0929C64.1049 12.5455 65.3544 10.7845 66.4865 8.68045C63.2495 8.18728 62.0318 16.2943 59.0429 14.8354C60.3568 13.0895 62.4341 10.8812 62.9479 8.48819C59.7597 8.64508 58.1865 16.221 55.1969 15.2672C56.8998 12.7509 57.9782 11.5432 59.5156 8.6068C55.5611 7.87577 54.9315 16.8596 50.8307 15.7011C52.9054 12.6567 54.5287 10.6187 55.8666 7.58477C51.2693 7.82243 50.3937 17.4918 45.5267 15.9316C47.6366 13.4716 49.694 10.8575 51.3901 7.189C47.9454 7.18539 45.3438 12.8291 42.8234 16.1508C42.1137 15.7934 40.8362 16.3994 40.5299 15.538C42.8973 13.1534 44.989 9.9638 46.8032 5.96347C42.9327 6.49277 40.7079 11.8304 37.9291 15.5493C37.1 15.6635 36.2817 15.8094 35.2219 15.2496C37.7968 12.4559 40.5962 7.61606 42.4212 4.32198C38.0107 5.41127 35.8265 9.92774 32.8261 14.8449C31.9592 15.0178 31.0833 15.1648 30.0164 14.7532C32.6438 11.4375 34.965 7.22738 37.4206 3.40962C33.1616 3.92584 30.4931 8.93129 27.5181 14.5565C26.2721 14.1297 25.3854 14.7518 24.0819 14.1562C27.203 11.6818 29.1973 6.63833 32.0022 2.29147C27.7683 2.44603 24.0659 8.52091 21.1697 14.2726C19.8927 13.9232 18.9961 14.686 17.6311 14.0803C20.6949 11.1933 23.595 5.12484 25.5396 0.658941C20.3685 1.84557 16.8836 8.01384 14.6165 14.4046C13.4018 14.2464 11.6266 15.1278 10.6602 14.0066C14.1421 11.3341 16.6254 4.49045 19.7036 -0.66496C14.232 -0.0639138 10.3891 7.38061 6.81809 14.9572C5.62965 14.8668 4.71995 15.5913 3.38584 15.0758C7.86219 11.5677 9.09806 3.90366 12.5159 -1.87922C6.87344 -2.23933 1.70461 8.75696 -0.353777 15.8184C-2.00517 16.2358 -3.42385 17.3335 -5.44501 16.6706C-0.271272 10.9669 1.65103 2.68697 3.76379 -3.60561C-3.08905 -1.35778 -7.9787 10.4695 -10.0082 18.5583C-15.1211 20.719 -21.4059 22.0476 -26.401 24.4406C-27.6459 25.037 -29.528 25.5237 -29.6126 26.2187L-25.8532 28.0704C-19.6982 25.9291 -14.016 22.4065 -7.80929 20.4168C-3.97451 26.488 0.331406 34.8932 10.1089 37.2549C6.32223 31.214 2.92642 23.9977 -4.17607 19.3633C-2.40837 18.7779 -0.734331 17.9193 1.22253 17.8871C3.92019 24.122 7.25766 32.2703 16.2247 34.3228C11.5449 28.967 11.1558 22.1624 3.92577 17.6678C8.16789 14.8614 9.47404 18.8252 10.9243 21.3736C13.1764 25.3306 15.5619 30.5771 21.4105 32.2248C18.6558 26.797 16.7221 21.0919 11.5114 16.4936C12.8991 16.151 14.3057 15.8635 15.8776 16.0596C18.3065 21.1598 19.9187 27.3771 27.014 30.3326C25.668 27.1298 24.1783 24.6847 22.7895 22.0488C22.2963 21.1127 22.1738 19.8466 21.5166 18.8372C20.7819 17.7082 19.3399 17.2171 19.2035 15.6301C20.1564 15.2008 21.4371 15.7298 22.5332 15.7195C24.2611 20.3204 25.627 26.7579 31.6835 28.7558C29.0788 24.5489 28.486 19.6627 24.8227 15.8134C25.9105 15.4402 27.2115 15.69 28.4639 15.7977C30.2368 20.0542 30.4438 24.8395 35.4232 28.0132C34.9603 24.3544 33.0097 19.6961 30.9622 15.9944C35.6502 15.8466 34.7565 20.3913 36.6368 23.4418C37.8174 25.357 39.2537 26.4281 40.9361 27.8857C40.4897 23.7591 38.4219 20.1803 36.3766 16.5937C37.4196 17.1043 38.0841 16.5092 39.1902 17.2042C41.3557 20.5063 42.6927 25.7853 47.2765 27.1319C45.729 23.724 43.9559 20.3924 41.791 17.193C47.7493 16.3334 46.297 25.0508 52.2614 25.9688C50.7178 22.9733 49.9492 20.1447 46.8902 17.3785C52.0234 15.7098 51.4763 24.0109 57.2462 24.8057C55.6638 22.1609 53.9955 19.5455 51.9854 17.0452C56.4059 15.3418 56.6148 23.4247 61.3957 23.2311C60.0489 20.9115 58.2771 18.7354 56.0403 16.7163C59.8288 13.8591 60.6532 21.9159 65.1274 21.4508C63.4169 19.6008 62.174 17.5929 60.0912 15.8686C63.3336 13.0057 65.1991 20.2429 69.0679 19.7734C68.2379 17.5463 64.4456 16.9422 64.2446 14.8129C66.6293 13.4252 69.6946 18.5259 72.4844 17.5793C70.8874 16.3267 68.8642 15.218 67.5663 13.8645C69.2968 12.1559 73.0456 16.3448 75.0692 15.4926C73.7747 14.5009 71.5513 13.6417 70.5769 13.0213C72.4895 11.5067 75.8516 14.2272 77.8591 12.9899C76.3397 11.9414 74.5207 12.6946 73.5836 11.6593C75.1295 10.0881 77.9201 12.1533 79.6127 11.0105ZM-20.0686 22.649C-19.9989 22.8527 -20.1131 22.5188 -20.0686 22.649ZM1.21847 17.3682C1.28817 17.5719 1.17388 17.238 1.21847 17.3682ZM47.8711 9.59102C47.9408 9.79464 47.8265 9.46077 47.8711 9.59102ZM45.3137 15.3098C45.3834 15.5134 45.2692 15.1795 45.3137 15.3098ZM50.9133 12.8987C50.983 13.1024 50.8687 12.7685 50.9133 12.8987Z" fill="#E6F0E4"/>
+</g>
+<rect x="1" y="1" width="35" height="35" rx="17.5" stroke="#285638" stroke-width="2"/>
+<path d="M46 12.6758H53.888V14.4038H48V17.3958H53.168V19.0278H48V24.0998H46V12.6758Z" fill="#285638"/>
+<path d="M60.9084 19.2358C60.887 18.9478 60.823 18.6704 60.7164 18.4038C60.6204 18.1371 60.4817 17.9078 60.3004 17.7158C60.1297 17.5131 59.9164 17.3531 59.6604 17.2358C59.415 17.1078 59.1377 17.0438 58.8284 17.0438C58.5084 17.0438 58.215 17.1024 57.9484 17.2198C57.6924 17.3264 57.4684 17.4811 57.2764 17.6838C57.095 17.8758 56.9457 18.1051 56.8284 18.3718C56.7217 18.6384 56.663 18.9264 56.6524 19.2358H60.9084ZM56.6524 20.4358C56.6524 20.7558 56.695 21.0651 56.7804 21.3638C56.8764 21.6624 57.015 21.9238 57.1964 22.1478C57.3777 22.3718 57.607 22.5531 57.8844 22.6918C58.1617 22.8198 58.4924 22.8838 58.8764 22.8838C59.4097 22.8838 59.8364 22.7718 60.1564 22.5478C60.487 22.3131 60.7324 21.9664 60.8924 21.5078H62.6204C62.5244 21.9558 62.359 22.3558 62.1244 22.7078C61.8897 23.0598 61.607 23.3584 61.2764 23.6038C60.9457 23.8384 60.5724 24.0144 60.1564 24.1318C59.751 24.2598 59.3244 24.3238 58.8764 24.3238C58.2257 24.3238 57.6497 24.2171 57.1484 24.0038C56.647 23.7904 56.2204 23.4918 55.8684 23.1078C55.527 22.7238 55.2657 22.2651 55.0844 21.7318C54.9137 21.1984 54.8284 20.6118 54.8284 19.9718C54.8284 19.3851 54.919 18.8304 55.1004 18.3078C55.2924 17.7744 55.559 17.3104 55.9004 16.9158C56.2524 16.5104 56.6737 16.1904 57.1644 15.9558C57.655 15.7211 58.2097 15.6038 58.8284 15.6038C59.479 15.6038 60.0604 15.7424 60.5724 16.0198C61.095 16.2864 61.527 16.6438 61.8684 17.0918C62.2097 17.5398 62.455 18.0571 62.6044 18.6438C62.7644 19.2198 62.807 19.8171 62.7324 20.4358H56.6524Z" fill="#285638"/>
+<path d="M64.119 15.8278H65.831V17.4278H65.863C65.9163 17.2038 66.0177 16.9851 66.167 16.7718C66.327 16.5584 66.5137 16.3664 66.727 16.1958C66.951 16.0144 67.1963 15.8704 67.463 15.7638C67.7297 15.6571 68.0017 15.6038 68.279 15.6038C68.4923 15.6038 68.6363 15.6091 68.711 15.6198C68.7963 15.6304 68.8817 15.6411 68.967 15.6518V17.4118C68.839 17.3904 68.7057 17.3744 68.567 17.3638C68.439 17.3424 68.311 17.3318 68.183 17.3318C67.8737 17.3318 67.5803 17.3958 67.303 17.5238C67.0363 17.6411 66.8017 17.8224 66.599 18.0678C66.3963 18.3024 66.2363 18.5958 66.119 18.9478C66.0017 19.2998 65.943 19.7051 65.943 20.1638V24.0998H64.119V15.8278Z" fill="#285638"/>
+<path d="M70.0252 15.8278H71.7533V17.0438L71.7852 17.0758C72.0626 16.6171 72.4252 16.2598 72.8732 16.0038C73.3212 15.7371 73.8172 15.6038 74.3612 15.6038C75.2679 15.6038 75.9826 15.8384 76.5053 16.3078C77.0279 16.7771 77.2892 17.4811 77.2892 18.4198V24.0998H75.4653V18.8998C75.4439 18.2491 75.3053 17.7798 75.0492 17.4918C74.7932 17.1931 74.3933 17.0438 73.8493 17.0438C73.5399 17.0438 73.2626 17.1024 73.0173 17.2198C72.7719 17.3264 72.5639 17.4811 72.3932 17.6838C72.2226 17.8758 72.0893 18.1051 71.9932 18.3718C71.8972 18.6384 71.8493 18.9211 71.8493 19.2198V24.0998H70.0252V15.8278Z" fill="#285638"/>
+<path d="M86.9779 12.6758H89.1059L93.5059 24.0998H91.3619L90.2899 21.0758H85.7299L84.6579 24.0998H82.5939L86.9779 12.6758ZM86.2739 19.5558H89.7619L88.0499 14.6438H88.0019L86.2739 19.5558Z" fill="#285638"/>
+<path d="M94.5938 12.6758H96.5938V24.0998H94.5938V12.6758Z" fill="#285638"/>
+<defs>
+<clipPath id="clip0_2433_2478">
+<rect x="1" y="1" width="35" height="35" rx="17.5" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+  </a>
+  <a href="#get-started" class="nav-cta">Start your matter →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Active EEOC deadline</div>
+      <h1>You have a Position Statement to write. <em>The clock is ticking.</em></h1>
+      <p class="hero-sub">
+        An EEOC charge just landed in your inbox. You're one of two employment lawyers covering thousands of employees — and this response is due in 30 days. It needs to be thorough, well-evidenced, and filed on time.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#get-started" class="btn-primary">Start your Position Statement →</a>
+        <a href="#how-it-works" class="btn-secondary">See how it works</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="matter-card">
+        <div class="matter-card-header">
+          <div class="matter-card-header-left">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><rect x="2" y="1" width="12" height="14" rx="2" fill="none" stroke="white" stroke-width="1.5"/><line x1="5" y1="5" x2="11" y2="5" stroke="white" stroke-width="1"/><line x1="5" y1="7.5" x2="11" y2="7.5" stroke="white" stroke-width="1"/><line x1="5" y1="10" x2="9" y2="10" stroke="white" stroke-width="1"/></svg>
+            <span>ACTIVE MATTER</span>
+          </div>
+          <div class="matter-card-header-badge">
+            <span class="matter-card-header-badge-dot"></span>
+            18 DAYS LEFT
+          </div>
+        </div>
+        <div class="matter-card-body">
+          <div class="matter-title">Chen v. ValueMart, Inc.</div>
+          <div class="matter-charge">EEOC Charge No. 2026-00412</div>
+          <div class="matter-rows">
+            <div class="matter-row">
+              <span class="matter-row-label">Jurisdiction</span>
+              <span class="matter-row-value">Title VII · Riverside, CA</span>
+            </div>
+            <div class="matter-row">
+              <span class="matter-row-label">Response deadline</span>
+              <span class="urgent-pill"><span class="urgent-pill-dot"></span> 18 days left</span>
+            </div>
+            <div class="matter-row">
+              <span class="matter-row-label">Allegations</span>
+              <span class="matter-row-value">4 claims identified</span>
+            </div>
+          </div>
+          <div class="claims-row">
+            <span class="claim-chip">Failure to Promote</span>
+            <span class="claim-chip">Hostile Work Env.</span>
+            <span class="claim-chip">Retaliation</span>
+            <span class="claim-chip">Disparate Treatment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE REALITY -->
+<section class="section-problem">
+  <div class="section-inner">
+    <div class="section-label reveal">The reality</div>
+    <h2 class="reveal">Every Position Statement is a project you can't delegate, shortcut, or postpone.</h2>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-number">1</div>
+        <h3>The charge sets the clock</h3>
+        <p>Thirty days. Sometimes twenty by the time HR forwards it. A weak or late response shapes the entire investigation against your company.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-number">2</div>
+        <h3>Every claim needs a chain</h3>
+        <p>Each allegation requires a legal strategy. Each strategy requires supporting documents. Each document needs analysis. Miss one link and the EEOC will find the gap.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-number">3</div>
+        <h3>You're already stretched</h3>
+        <p>You cover employment matters across every business unit. Advisory work doesn't stop because a charge arrived. This project competes with everything else on your desk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALTERNATIVES -->
+<section class="section-gap">
+  <div class="section-inner">
+    <div class="section-label reveal">What you've tried</div>
+    <h2 class="reveal">You've looked for a better way. Nothing connects the full reasoning chain.</h2>
+    <p class="section-sub reveal">
+      The options you've considered solve pieces of the problem, but none of them give you leverage over the whole connected argument, and none of them help you get better each time.
+    </p>
+    <div class="alternatives-grid">
+      <div class="alt-card reveal">
+        <div class="alt-icon">👤</div>
+        <h3>You</h3>
+        <p class="alt-desc">20–40 hours reading, cross-referencing, requesting information, and drafting — while your regular advisory work across every business unit piles up.</p>
+        <div class="alt-fail">Every hour here is stolen from your portfolio.</div>
+      </div>
+      <div class="alt-card reveal">
+        <div class="alt-icon">🤖</div>
+        <h3>General AI tools</h3>
+        <p class="alt-desc">Can summarize a document or draft a paragraph. No concept of the claim-strategy-evidence chain. And anything you input is a privilege risk.</p>
+        <div class="alt-fail">No legal structure. High privilege risk.</div>
+      </div>
+      <div class="alt-card reveal">
+        <div class="alt-icon">📨</div>
+        <h3>Outside counsel</h3>
+        <p class="alt-desc">$10,000–$30,000 per response. They don't know your managers, policies, or investigation history. You still do half the work.</p>
+        <div class="alt-fail">Paying a premium for someone who knows less.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW FERN WORKS -->
+<section class="section-chain" id="how-it-works">
+  <div class="section-inner">
+    <div class="chain-header">
+      <div class="section-label reveal">How Fern works</div>
+      <h2 class="reveal">Fern builds the full reasoning chain — so you can focus on judgment, not assembly.</h2>
+      <p class="reveal">Upload the charge. Fern does the structured work. You make the strategic calls.</p>
+    </div>
+    <div class="chain-flow reveal">
+      <div class="chain-step">
+        <div class="chain-dot">1</div>
+        <h4>Charge → Claims</h4>
+        <p>AI reads the charge and extracts every allegation, statute, and named person. You review and refine.</p>
+      </div>
+      <div class="chain-step">
+        <div class="chain-dot">2</div>
+        <h4>Claims → Strategy</h4>
+        <p>For each claim, Fern proposes defense strategies and maps what documents you'll need to support each one.</p>
+      </div>
+      <div class="chain-step">
+        <div class="chain-dot">3</div>
+        <h4>Strategy → Evidence</h4>
+        <p>Upload HR documents. Fern analyzes each one, flags contradictions, and validates your defense strategies.</p>
+      </div>
+      <div class="chain-step">
+        <div class="chain-dot">4</div>
+        <h4>Evidence → Narrative</h4>
+        <p>Fern curates the strongest evidence and drafts each section of your Position Statement with exhibit citations.</p>
+      </div>
+    </div>
+    <div class="chain-time reveal">
+      <div class="chain-time-compare">
+        <div class="time-item old">
+          <span class="time-num">20–40</span>
+          <span class="time-label">hours (manual)</span>
+        </div>
+        <span class="time-arrow">→</span>
+        <div class="time-item new">
+          <span class="time-num">3–5</span>
+          <span class="time-label">hours with Fern</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="section-proof">
+  <div class="section-inner">
+    <div class="proof-header">
+      <div class="section-label reveal">From in-house teams like yours</div>
+      <h2 class="reveal">They had the same deadline pressure. Fern changed the math.</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card reveal">
+        <p class="proof-quote">"I had a three-claim race discrimination charge from our Kentucky plant. The HRBP sent me a pile of documents — performance reviews, attendance records, shift schedules, three years of emails. Normally that's a week of my life. I uploaded everything to Fern and had a working draft by Thursday. I kept waiting for the catch."</p>
+        <div class="proof-attr">
+          <div class="proof-avatar">SE</div>
+          <div>
+            <div class="proof-name">Senior Employment Counsel</div>
+            <div class="proof-title">Fortune 50 automotive manufacturer</div>
+          </div>
+        </div>
+        <div class="proof-result">Position Statement prep reduced from 32 hours to 6.</div>
+      </div>
+      <div class="proof-card reveal">
+        <p class="proof-quote">"Honestly I almost missed it. The manager wrote in the PIP that the employee 'wasn't a culture fit' — and then in a Slack message two months earlier told someone she was 'too aggressive for this team.' Fern flagged that as a potential contradiction. At 11pm the night before filing, I would not have caught that."</p>
+        <div class="proof-attr">
+          <div class="proof-avatar">EC</div>
+          <div>
+            <div class="proof-name">Employment Counsel</div>
+            <div class="proof-title">Global technology company</div>
+          </div>
+        </div>
+        <div class="proof-result">Critical contradiction identified across 380 pages of HR records.</div>
+      </div>
+      <div class="proof-card reveal">
+        <p class="proof-quote">"We were spending over half a million a year sending charges to outside firms. And I'd still spend 10 hours on every one — briefing them, finding the documents they needed, reviewing the draft because they don't know our policies. At some point I thought, I'm doing most of this work anyway."</p>
+        <div class="proof-attr">
+          <div class="proof-avatar">AG</div>
+          <div>
+            <div class="proof-name">Associate General Counsel, Employment</div>
+            <div class="proof-title">Fortune 1 retailer</div>
+          </div>
+        </div>
+        <div class="proof-result">Brought 40+ EEOC responses in-house in the first year.</div>
+      </div>
+      <div class="proof-card reveal">
+        <p class="proof-quote">"The thing nobody tells you about in-house employment work is that you never do the same type of charge twice in a row. Monday it's a failure-to-promote in consulting, Wednesday it's a hostile work environment in our back office. I don't have time to build the framework from scratch every time. That's what I use Fern for."</p>
+        <div class="proof-attr">
+          <div class="proof-avatar">SM</div>
+          <div>
+            <div class="proof-name">Senior Managing Counsel</div>
+            <div class="proof-title">Global professional services firm</div>
+          </div>
+        </div>
+        <div class="proof-result">Handles 3× the EEOC caseload with the same two-person team.</div>
+      </div>
+      <div class="proof-card reveal">
+        <p class="proof-quote">"Faculty charges are a nightmare. Tenure committee minutes, peer review letters, department meeting notes — and everyone has an opinion about what happened. My paralegal spent two days just organizing the documents last time. This time I uploaded them and Fern had the timeline built and the relevant excerpts pulled before lunch."</p>
+        <div class="proof-attr">
+          <div class="proof-avatar">UC</div>
+          <div>
+            <div class="proof-name">University Counsel</div>
+            <div class="proof-title">Major research university</div>
+          </div>
+        </div>
+        <div class="proof-result">Filed a 4-claim response 8 days ahead of deadline.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORY BOARD -->
+<section class="section-advisory">
+  <div class="advisory-inner">
+    <div class="section-label reveal">Built with, not for</div>
+    <h2 class="reveal">Shaped by senior employment leaders who do this work every day.</h2>
+    <p class="advisory-body reveal">Fern's Customer Advisory Board includes heads of employment law and senior in-house counsel at Fortune 500 companies, major universities, and global services firms. They didn't just review the product — they defined the workflow, challenged the AI, and pressure-tested every phase against real EEOC charges from their own desks.</p>
+    <div class="advisory-logos reveal">
+      <div class="advisory-logo-placeholder">LOGO</div>
+      <div class="advisory-logo-placeholder">LOGO</div>
+      <div class="advisory-logo-placeholder">LOGO</div>
+      <div class="advisory-logo-placeholder">LOGO</div>
+      <div class="advisory-logo-placeholder">LOGO</div>
+    </div>
+    <p class="advisory-pullquote reveal">"Most legal tech is built by engineers who've never filed a Position Statement. This was built with us."</p>
+    <p class="advisory-pullquote-attr reveal">— Advisory Board Member</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section-cta" id="get-started">
+  <div class="cta-inner">
+    <h2>You have a charge on your desk.<br>Let's get it answered.</h2>
+    <p>Upload your EEOC charge document. Fern will analyze the claims, propose defense strategies, and build the reasoning chain — in minutes, not days.</p>
+    <a href="#" class="btn-white">
+      Start your Position Statement
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
+    <div class="cta-note">No credit card required. Your first matter is free.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span>FERN AI</span>
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Security</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
