@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fern AI — EEOC Position Statements for In-House Counsel</title>
+<title>Fern AI – EEOC Position Statements for In-House Counsel</title>
 <link rel="icon" href="./assets/fern-icon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -218,7 +218,7 @@
     color: var(--fern);
   }
 
-  /* Hero right — the "deadline" visual */
+  /* Hero right – the "deadline" visual */
   .hero-visual {
     position: relative;
     animation: fadeInUp 0.8s ease 0.3s both;
@@ -363,7 +363,7 @@
   .claim-chip:nth-child(4) { background: #F0FDF4; border-color: #22C55E; color: #166534; }
 
   /* ============================================
-     SECTION — THE REALITY
+     SECTION – THE REALITY
      ============================================ */
   .section-problem {
     padding: 120px 48px;
@@ -446,7 +446,7 @@
   }
 
   /* ============================================
-     SECTION — ALTERNATIVES
+     SECTION – ALTERNATIVES
      ============================================ */
   .section-gap {
     padding: 120px 48px;
@@ -557,7 +557,7 @@
   }
 
   /* ============================================
-     SECTION — HOW FERN WORKS
+     SECTION – HOW FERN WORKS
      ============================================ */
   .section-chain {
     padding: 120px 48px;
@@ -703,7 +703,7 @@
   }
 
   /* ============================================
-     SECTION — SOCIAL PROOF (AUTO-SCROLL MARQUEE)
+     SECTION – SOCIAL PROOF (AUTO-SCROLL MARQUEE)
      ============================================ */
   .section-proof {
     padding: 100px 0;
@@ -823,7 +823,7 @@
   }
 
   /* ============================================
-     SECTION — ADVISORY BOARD
+     SECTION – ADVISORY BOARD
      ============================================ */
   .section-advisory {
     padding: 120px 48px;
@@ -905,7 +905,7 @@
   }
 
   /* ============================================
-     SECTION — FINAL CTA
+     SECTION – FINAL CTA
      ============================================ */
   .section-cta {
     padding: 120px 48px;
@@ -1242,6 +1242,83 @@
     color: rgba(255,255,255,0.25);
   }
 
+
+  /* ── DEMAND LETTERS SPLIT ── */
+  .section-dl-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 460px;
+    border-top: 1px solid var(--border);
+  }
+  .dl-split-left {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+  }
+  .dl-doc-bg {
+    position: absolute; inset: 0;
+    padding: 40px 36px;
+    overflow: hidden;
+    opacity: 0.15;
+  }
+  .dl-doc-line { height: 1px; background: #fff; margin-bottom: 9px; }
+  .dl-doc-line.s  { width: 35%; }
+  .dl-doc-line.m  { width: 60%; }
+  .dl-doc-line.l  { width: 88%; }
+  .dl-doc-line.xl { width: 100%; }
+  .dl-doc-header  { font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+  .dl-doc-amount  { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: 0.5px; }
+  .dl-doc-block   { margin-bottom: 14px; }
+  .dl-stamp {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-16deg);
+    font-size: 44px; font-weight: 700; color: rgba(190,40,40,0.5);
+    letter-spacing: 5px; text-transform: uppercase;
+    border: 3px solid rgba(190,40,40,0.4);
+    padding: 6px 14px; white-space: nowrap;
+    pointer-events: none; font-family: 'DM Sans', sans-serif;
+  }
+  .dl-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(140deg, rgba(17,17,17,0.4) 0%, rgba(26,61,38,0.82) 100%);
+  }
+  .dl-left-content {
+    position: relative; z-index: 2;
+    padding: 48px 48px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    height: 100%;
+  }
+  .dl-left-tag {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px;
+  }
+  .dl-quote {
+    font-family: 'Newsreader', serif; font-size: 17px; font-style: italic;
+    line-height: 1.7; color: #fff; margin-bottom: 14px;
+  }
+  .dl-attr { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .dl-split-right {
+    padding: 56px 56px;
+    background: var(--warm-white);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .dl-right-tag {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--fern); margin-bottom: 14px;
+  }
+  .dl-right-h {
+    font-family: 'Newsreader', serif; font-size: 36px; font-weight: 400;
+    line-height: 1.2; color: var(--text); margin-bottom: 14px;
+  }
+  .dl-right-sub {
+    font-size: 16px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 28px;
+  }
+  @media (max-width: 768px) {
+    .section-dl-split { grid-template-columns: 1fr; }
+    .dl-split-left { min-height: 280px; }
+    .dl-split-right { padding: 40px 28px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1260,7 +1337,7 @@
       <div class="hero-badge">Employee Disputes · Agency Charges</div>
       <h1>Your Next Position Statement: <em>2 Hours, Not 20.</em></h1>
       <p class="hero-sub">
-        Fern is purpose-built AI for EEOC and state agency charges — it reads the charge, analyzes your documents, and drafts a complete, cite-checked Position Statement while you focus on work that requires your judgment.
+        Fern is purpose-built AI for EEOC and state agency charges – it reads the charge, analyzes your documents, and drafts a complete, cite-checked Position Statement while you focus on work that requires your judgment.
       </p>
       <div class="hero-cta-group">
         <a href="#get-started" class="btn-primary">See Fern on a Real Matter →</a>
@@ -1317,7 +1394,7 @@
       <div class="problem-card reveal">
         <div class="problem-number">1</div>
         <h3>The Work Can't Be Delegated</h3>
-        <p>20 to 30 hours of work per charge, a record that will follow the case into litigation, and a deadline that doesn't move — regardless of what else is on your plate, you're doing most of it yourself.</p>
+        <p>20 to 30 hours of work per charge, a record that will follow the case into litigation, and a deadline that doesn't move – regardless of what else is on your plate, you're doing most of it yourself.</p>
       </div>
       <div class="problem-card reveal">
         <div class="problem-number">2</div>
@@ -1369,7 +1446,7 @@
 
       <!-- Step 1 mockup -->
       <div class="chain-visual-panel">
-        <div class="chain-visual-label">Step 1 — what Fern extracts from the charge</div>
+        <div class="chain-visual-label">Step 1 – what Fern extracts from the charge</div>
         <div class="mock-frame">
           <div class="mock-titlebar">
             <div class="mock-tb-left">
@@ -1419,7 +1496,7 @@
 
       <!-- Step 4 mockup -->
       <div class="chain-visual-panel">
-        <div class="chain-visual-label">Step 4 — what Fern drafts for you</div>
+        <div class="chain-visual-label">Step 4 – what Fern drafts for you</div>
         <div class="mock-frame">
           <div class="mock-titlebar">
             <div class="mock-tb-left">
@@ -1433,10 +1510,10 @@
               <span class="mock-meta-txt"><strong>RE:</strong> EEOC Charge No. 2025-00412 · Respondent: ValueMart, Inc.</span>
               <span class="mock-count">31 exhibit citations</span>
             </div>
-            <div class="mock-doc-section">V.B — Legitimate, Non-Discriminatory Reason for Selecting Brian Garrett</div>
-            <p class="mock-doc-p">District Manager Hadley selected Garrett on September 25, 2025 based on documented operational needs. Store #1247 had experienced rising inventory shrinkage — up 22% year-over-year in Q2–Q3 2025 — and declining NPS scores.<span class="mock-cite">DOC-009, p. 4</span></p>
+            <div class="mock-doc-section">V.B – Legitimate, Non-Discriminatory Reason for Selecting Brian Garrett</div>
+            <p class="mock-doc-p">District Manager Hadley selected Garrett on September 25, 2025 based on documented operational needs. Store #1247 had experienced rising inventory shrinkage – up 22% year-over-year in Q2–Q3 2025 – and declining NPS scores.<span class="mock-cite">DOC-009, p. 4</span></p>
             <div class="mock-doc-hl">Chen received an overall rating of 3.25/5.00 and a rating of 2/5 ("Needs Improvement") in Revenue Generation, weighted at 30%.<span class="mock-cite mock-cite-a">DOC-001, p. 2</span> Home Goods revenue was 8% below plan in Q3 and 6% below plan in Q4.<span class="mock-cite mock-cite-a">DOC-001, p. 3</span> Development areas identified included enterprise account development and willingness to make tough staffing decisions.<span class="mock-cite mock-cite-a">DOC-001, p. 4</span></div>
-            <p class="mock-doc-p">Garrett's 2024 Review documented a 34% decrease in shrinkage and a 12-point NPS improvement at Store #0893 — shrinkage declined from 3.8% to 1.9%; NPS increased from 65 to 79.<span class="mock-cite">DOC-003, p. 3</span><span class="mock-cite">DOC-011, p. 1</span> Hadley documented these results were directly responsive to Store #1247's operational challenges.<span class="mock-cite">DOC-007, p. 2</span></p>
+            <p class="mock-doc-p">Garrett's 2024 Review documented a 34% decrease in shrinkage and a 12-point NPS improvement at Store #0893 – shrinkage declined from 3.8% to 1.9%; NPS increased from 65 to 79.<span class="mock-cite">DOC-003, p. 3</span><span class="mock-cite">DOC-011, p. 1</span> Hadley documented these results were directly responsive to Store #1247's operational challenges.<span class="mock-cite">DOC-007, p. 2</span></p>
           </div>
         </div>
       </div>
@@ -1465,14 +1542,14 @@
   <div class="advisory-inner">
     <div class="section-label reveal">Customer advisory board</div>
     <h2 class="reveal">Built with the lawyers who handle this work every day.</h2>
-    <p class="advisory-body reveal">Fern's advisory board is composed of senior in-house employment lawyers currently or previously serving at some of the largest US and global employers. They didn't review the product — they defined the workflow.</p>
+    <p class="advisory-body reveal">Fern's advisory board is composed of senior in-house employment lawyers currently or previously serving at some of the largest US and global employers. They didn't review the product – they defined the workflow.</p>
 
     <div class="adv-titles-block reveal">
       <div class="adv-titles-intro">Titles held by advisory board members include</div>
       <ul class="adv-title-list">
         <li class="adv-title-item"><span class="adv-title-dot"></span>Assistant General Counsel, Employment</li>
         <li class="adv-title-item"><span class="adv-title-dot"></span>Associate General Counsel, Labor &amp; Employment</li>
-        <li class="adv-title-item"><span class="adv-title-dot"></span>Deputy General Counsel — Labor, Employment, and Litigation</li>
+        <li class="adv-title-item"><span class="adv-title-dot"></span>Deputy General Counsel – Labor, Employment, and Litigation</li>
         <li class="adv-title-item"><span class="adv-title-dot"></span>Director, Global Labor &amp; Employment Law</li>
         <li class="adv-title-item"><span class="adv-title-dot"></span>Global Employment Counsel</li>
         <li class="adv-title-item"><span class="adv-title-dot"></span>Senior Counsel, Employment Law</li>
@@ -1482,16 +1559,16 @@
 
     <div class="adv-sectors-label reveal">Sectors represented</div>
     <div class="adv-sector-grid reveal">
-      <div class="adv-sector-card"><div class="adv-sector-name">Retail</div><div class="adv-sector-detail">Mass market and specialty apparel retail — large hourly workforces, high charge volume, 50-state operations</div></div>
-      <div class="adv-sector-card"><div class="adv-sector-name">Technology</div><div class="adv-sector-detail">Enterprise software, cloud, networking, and financial technology — salaried and contractor-heavy populations</div></div>
-      <div class="adv-sector-card"><div class="adv-sector-name">Manufacturing</div><div class="adv-sector-detail">Automotive and aerospace manufacturing — specialized hourly and engineering workforces, US and global</div></div>
-      <div class="adv-sector-card"><div class="adv-sector-name">Logistics</div><div class="adv-sector-detail">Global e-commerce and logistics — among the highest-volume employment dispute environments in the US</div></div>
-      <div class="adv-sector-card"><div class="adv-sector-name">Financial services</div><div class="adv-sector-detail">Major global bank — large consumer and institutional workforce across US and international operations</div></div>
-      <div class="adv-sector-card"><div class="adv-sector-name">Healthcare technology</div><div class="adv-sector-detail">Healthcare financial technology, payment integrity, and benefits administration — complex multi-payer workforce</div></div>
+      <div class="adv-sector-card"><div class="adv-sector-name">Retail</div><div class="adv-sector-detail">Mass market and specialty apparel retail – large hourly workforces, high charge volume, 50-state operations</div></div>
+      <div class="adv-sector-card"><div class="adv-sector-name">Technology</div><div class="adv-sector-detail">Enterprise software, cloud, networking, and financial technology – salaried and contractor-heavy populations</div></div>
+      <div class="adv-sector-card"><div class="adv-sector-name">Manufacturing</div><div class="adv-sector-detail">Automotive and aerospace manufacturing – specialized hourly and engineering workforces, US and global</div></div>
+      <div class="adv-sector-card"><div class="adv-sector-name">Logistics</div><div class="adv-sector-detail">Global e-commerce and logistics – among the highest-volume employment dispute environments in the US</div></div>
+      <div class="adv-sector-card"><div class="adv-sector-name">Financial services</div><div class="adv-sector-detail">Major global bank – large consumer and institutional workforce across US and international operations</div></div>
+      <div class="adv-sector-card"><div class="adv-sector-name">Healthcare technology</div><div class="adv-sector-detail">Healthcare financial technology, payment integrity, and benefits administration – complex multi-payer workforce</div></div>
     </div>
 
-    <p class="advisory-pullquote reveal">"Most legal tech is built by engineers who've never filed a Position Statement. This was built with us — the workflow reflects how experienced practitioners actually approach these matters."</p>
-    <p class="advisory-pullquote-attr reveal">— Advisory Board Member, former Am Law 100 employment partner</p>
+    <p class="advisory-pullquote reveal">"Most legal tech is built by engineers who've never filed a Position Statement. This was built with us – the workflow reflects how experienced practitioners actually approach these matters."</p>
+    <p class="advisory-pullquote-attr reveal">– Advisory Board Member, former Am Law 100 employment partner</p>
   </div>
 </section>
 
@@ -1538,7 +1615,7 @@
         <div class="proof-result">Handles 3× the EEOC caseload with the same team</div>
       </div>
       <div class="proof-card">
-        <p class="proof-quote">"Faculty charges are a nightmare — tenure committee minutes, peer review letters, department meeting notes. My paralegal spent two days just organizing the documents. This time Fern had the timeline built and the relevant excerpts pulled before lunch."</p>
+        <p class="proof-quote">"Faculty charges are a nightmare – tenure committee minutes, peer review letters, department meeting notes. My paralegal spent two days just organizing the documents. This time Fern had the timeline built and the relevant excerpts pulled before lunch."</p>
         <div class="proof-attr">
           <div class="proof-avatar">UC</div>
           <div>
@@ -1549,7 +1626,7 @@
         <div class="proof-result">Filed a 4-claim response 8 days ahead of deadline</div>
       </div>
       <div class="proof-card">
-        <p class="proof-quote">"I brought 3 EEOC responses in-house in the first month. The work product is better than what we were getting from outside counsel — and I can actually verify every fact before it goes out."</p>
+        <p class="proof-quote">"I brought 3 EEOC responses in-house in the first month. The work product is better than what we were getting from outside counsel – and I can actually verify every fact before it goes out."</p>
         <div class="proof-attr">
           <div class="proof-avatar">AG</div>
           <div>
@@ -1594,7 +1671,7 @@
         <div class="proof-result">Handles 3× the EEOC caseload with the same team</div>
       </div>
       <div class="proof-card">
-        <p class="proof-quote">"Faculty charges are a nightmare — tenure committee minutes, peer review letters, department meeting notes. My paralegal spent two days just organizing the documents. This time Fern had the timeline built and the relevant excerpts pulled before lunch."</p>
+        <p class="proof-quote">"Faculty charges are a nightmare – tenure committee minutes, peer review letters, department meeting notes. My paralegal spent two days just organizing the documents. This time Fern had the timeline built and the relevant excerpts pulled before lunch."</p>
         <div class="proof-attr">
           <div class="proof-avatar">UC</div>
           <div>
@@ -1605,7 +1682,7 @@
         <div class="proof-result">Filed a 4-claim response 8 days ahead of deadline</div>
       </div>
       <div class="proof-card">
-        <p class="proof-quote">"I brought 3 EEOC responses in-house in the first month. The work product is better than what we were getting from outside counsel — and I can actually verify every fact before it goes out."</p>
+        <p class="proof-quote">"I brought 3 EEOC responses in-house in the first month. The work product is better than what we were getting from outside counsel – and I can actually verify every fact before it goes out."</p>
         <div class="proof-attr">
           <div class="proof-avatar">AG</div>
           <div>
@@ -1633,7 +1710,7 @@
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#8A8A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8M6 18h8M7 2v4l-3 4 3 4v4M13 2v4l3 4-3 4v4"/></svg>
         </div>
         <h3>Do it yourself</h3>
-        <p class="alt-desc">Defensible — but it costs 20–30 hours per charge. Reading, cross-referencing, drafting, reviewing. Nights and weekends.</p>
+        <p class="alt-desc">Defensible – but it costs 20–30 hours per charge. Reading, cross-referencing, drafting, reviewing. Nights and weekends.</p>
         <div class="alt-fail">You don't have those hours.</div>
       </div>
       <div class="alt-card reveal">
@@ -1649,7 +1726,7 @@
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#8A8A8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v14M7 6h4.5a2.5 2.5 0 0 1 0 5h-5a2.5 2.5 0 0 0 0 5H13"/></svg>
         </div>
         <h3>Outside counsel</h3>
-        <p class="alt-desc">$5,000–$30,000 per matter. They don't know your company. You spend hours briefing them — and reviewing their draft anyway.</p>
+        <p class="alt-desc">$5,000–$30,000 per matter. They don't know your company. You spend hours briefing them – and reviewing their draft anyway.</p>
         <div class="alt-fail">Expensive, slow, and not fully delegable.</div>
       </div>
       <div class="alt-card reveal">
@@ -1668,7 +1745,7 @@
 <section class="section-cta" id="get-started">
   <div class="cta-inner">
     <h2>Run It on a Real Matter.<br>See the difference in a week.</h2>
-    <p>Use Fern on an actual pending charge for one week — full functionality, your documents, your record.</p>
+    <p>Use Fern on an actual pending charge for one week – full functionality, your documents, your record.</p>
     <div class="cta-buttons">
       <button class="btn-white" onclick="openTallyTrial()">
         Start the Trial →
@@ -1682,10 +1759,45 @@
 </section>
 
 <!-- DEMAND LETTERS -->
-<section class="section-dl">
-  <div class="dl-inner">
-    <h2>Demand letters. Same rigor, coming in June.</h2>
-    <p class="dl-sub">Respond to demand letters decisively, with evidence on your side.</p>
+<section class="section-dl-split">
+  <div class="dl-split-left">
+    <div class="dl-doc-bg">
+      <div class="dl-doc-amount">RE: DEMAND FOR COMPENSATION – $1,850,000</div>
+      <div class="dl-doc-block">
+        <div class="dl-doc-line xl"></div>
+        <div class="dl-doc-line xl"></div>
+        <div class="dl-doc-line l"></div>
+      </div>
+      <div class="dl-doc-block">
+        <div class="dl-doc-line xl"></div>
+        <div class="dl-doc-line xl"></div>
+        <div class="dl-doc-line xl"></div>
+        <div class="dl-doc-line m"></div>
+      </div>
+      <div class="dl-doc-block">
+        <div class="dl-doc-line xl"></div>
+        <div class="dl-doc-line xl"></div>
+        <div class="dl-doc-line l"></div>
+      </div>
+      <div class="dl-doc-header">DEADLINE: 14 DAYS FROM RECEIPT</div>
+      <div class="dl-doc-block">
+        <div class="dl-doc-line xl"></div>
+        <div class="dl-doc-line xl"></div>
+        <div class="dl-doc-line s"></div>
+      </div>
+    </div>
+    <div class="dl-stamp">DEMAND</div>
+    <div class="dl-overlay"></div>
+    <div class="dl-left-content">
+      <div class="dl-left-tag">In their words</div>
+      <p class="dl-quote">"A demand letter lands on your desk. The issue isn't finding the law. It's connecting the law to your specific facts, in your specific documents, in a way that holds up if it escalates."</p>
+      <p class="dl-attr">– Senior Employment Counsel</p>
+    </div>
+  </div>
+  <div class="dl-split-right">
+    <div class="dl-right-tag">Coming June 2026</div>
+    <h2 class="dl-right-h">Demand letters.<br>Same rigor.</h2>
+    <p class="dl-right-sub">Respond decisively, with evidence on your side. Fern applies a four-step reasoning chain to demand letter responses.</p>
     <div class="dl-waitlist-form">
       <input class="dl-waitlist-input" type="email" placeholder="you@company.com">
       <button class="dl-waitlist-btn" onclick="openTallyWaitlist()">Join waitlist →</button>
@@ -1700,7 +1812,7 @@
     <div class="team-left">
       <div class="section-label-muted">The team</div>
       <h2>Built by people who've worked inside the problem.</h2>
-      <p class="team-body">The Fern team brings together experience in AI engineering, enterprise software, and large-scale workforce operations — from companies that face exactly the employment law challenges Fern is designed to solve.</p>
+      <p class="team-body">The Fern team brings together experience in AI engineering, enterprise software, and large-scale workforce operations – from companies that face exactly the employment law challenges Fern is designed to solve.</p>
     </div>
     <div class="team-right">
       <div class="team-formerly-label">Team members previously at</div>
