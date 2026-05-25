@@ -1084,12 +1084,12 @@
   .dl-pill-coming { background:var(--fern-light); color:var(--fern); }
   .section-dl h2 { font-family:'Newsreader',serif; font-size:38px; font-weight:400; line-height:1.2; color:var(--text); margin-bottom:16px; }
   .dl-sub { font-size:17px; color:var(--text-secondary); line-height:1.6; margin-bottom:36px; }
-  .dl-waitlist-form { display:flex; gap:8px; max-width:480px; margin:0 auto 12px; }
+  .dl-waitlist-form { display:flex; gap:8px; margin:0 0 12px; }
   .dl-waitlist-input { flex:1; padding:12px 14px; border:1px solid var(--border); border-radius:6px; font-family:'DM Sans',sans-serif; font-size:14px; color:var(--text); background:#fff; outline:none; }
   .dl-waitlist-input:focus { border-color:var(--fern); }
   .dl-waitlist-btn { padding:12px 20px; background:var(--fern); color:#fff; border:none; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; cursor:pointer; white-space:nowrap; }
   .dl-waitlist-btn:hover { background:var(--fern-deep); }
-  .dl-waitlist-note { font-size:12px; color:var(--text-muted); }
+  .dl-waitlist-note { font-size:12px; color:var(--text-muted); text-align:left; }
 
   /* ── COMPANY CREDIBILITY ── */
   .section-cred { padding:56px 48px; background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
@@ -1256,6 +1256,7 @@
     position: relative;
     overflow: hidden;
     background: #111;
+    min-height: 460px;
   }
   .dl-doc-bg {
     position: absolute; inset: 0;
@@ -1285,10 +1286,8 @@
     background: linear-gradient(140deg, rgba(17,17,17,0.4) 0%, rgba(26,61,38,0.82) 100%);
   }
   .dl-left-content {
-    position: relative; z-index: 2;
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
     padding: 48px 48px;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    height: 100%;
   }
   .dl-left-tag {
     font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
@@ -1825,7 +1824,6 @@
         <span class="team-chip">Geico</span>
         <span class="team-chip">General Motors</span>
         <span class="team-chip">McKinsey</span>
-        <span class="team-chip">
         <span class="team-chip">Protocol Labs</span>
         <span class="team-chip">Salesforce</span>
         <span class="team-chip">Siebel Systems</span>
